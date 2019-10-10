@@ -8,4 +8,6 @@ It can run alone to download the files as well.
 For now, there're only two methods to find files in a web page. Probably working on adding more reliable methods.
 
 -*- 2019.8.31 -*-
-Add a method of finding file, some pictures are loaded by css style sheets maybe for copyrights. Now the code can find them out.
+Add the third method of finding file, some pictures are loaded by css style sheets maybe for copyrights. Now the code can find them out.
+-*- 2019.10.9 -*-
+Now the script will create a new fold for downloaded files, using the name you give.
