@@ -2,8 +2,7 @@
 
 #关于本程序的初步想法：辅助爬虫 实现下载页面内图片的功能 未来可重复使用
 
-#想要添加的功能：1.获取页面内视频地址并下载视频文件
-#				2.未来能方便地添加任意格式的代码 这很可能需要面向对象封装
+#想要添加的功能：1.未来能方便地添加任意格式的代码 这很可能需要面向对象封装
 
 import requests
 from bs4 import BeautifulSoup
@@ -69,7 +68,11 @@ def oridown(html,link,type,name,num,path):
 	f=open(path+imgname,"wb+")
 	#得到的有可能是相对路径 先用urllib.parse.urljoin得到绝对路径
 	link=urljoin(html,link)
-	img=requests.get(link,proxies=proxy_dict)
+	header={
+		"referer": html,
+		"user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3741.400 QQBrowser/10.5.3863.400"
+	}
+	img=requests.get(link,proxies=proxy_dict,headers=header)
 	f.write(img.content)
 	f.close()
 	img.close()
