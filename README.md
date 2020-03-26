@@ -14,4 +14,4 @@ Add the third method of finding file, some pictures are loaded by css style shee
 Now the script will create a new folder for downloaded files, using the name you give.
 
 -- 2020.3.26 --
-Add "referer" parameter into http head, which made it possible to pass the crawler detection in some websites(Such as pixiv).
+Added "referer" parameter into http head, which made it possible to pass the crawler detection in some websites(Such as pixiv).
